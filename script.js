@@ -1,17 +1,23 @@
 // Assignment code here
 function generatePassword() {
   // list of characters used //
-  var char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()"
-  var Lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-  var Uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-  var num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  var Char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()"
+  var LowerCase = "abcdefghijklmnopqrstuvwxyz"
+  var Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  var Num = "0123456789"
+  var SpecialChar = "!@#$%^&*()"
+  
+  var useLowerCase = confirm("Would you like lowercase letters?")
+  var useUpperCase = confirm("Would you like uppercase letters?")
+  var UseNum = confirm("Would you like numbers?")
+  var useSpeciaChar = confirm("Would you like special characters?")
   // window prompts //
   length = prompt("Password length from 8 to 128")
   passwordText = [""]
   // the for loop to repeat the action //
    for (i=0;i < length; i++) {
-    passwordText += char.charAt(Math.floor(Math.random() * char.length));
-    passwordText += char.charAt(Math.floor(Math.random() * num.length));
+    passwordText += Char.charAt(Math.floor(Math.random() * Char.length));
+    passwordText += Char.charAt(Math.floor(Math.random() * Num.length));
    }
    // if statement for length of password //
    if (length < 8) {
